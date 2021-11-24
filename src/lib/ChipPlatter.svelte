@@ -5,13 +5,16 @@
 	export let hintStore: any;
 	export let max: number;
 
+	let render = true;
+
 	$: reset(max);
 
 	const reset = (_) => {
 		correctAnswer = chooseRandom()
 		options = generateList();
-		let activeElement: any = document.activeElement; // Stored in variable to stop typescript false error
-		if(activeElement.classList.contains('chip')) activeElement.blur();
+
+		render = false;
+		setTimeout(() => render = true, 1);
 	}
 
 	const chooseRandom = () => {
@@ -55,13 +58,16 @@
 		options[correctIdx].status = 'correct';
 	}
 </script>
-<div class="grid grid-rows-2 grid-cols-3 gap-4 sm:gap-8">
-	{#each options as option}
-		<button on:click={e => { submitAnswer(option.value) }} data-status={option.status} class="chip h-20 w-20 sm:w-24 sm:h-24 xl:h-32 xl:w-32 text-3xl sm:text-4xl xl:text-5xl dark:text-gray-300 font-semibold tracking-widest border dark:border-gray-700 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:ring-2 ring-indigo-600 dark:ring-indigo-400 ring-offset-[0.15rem] dark:ring-offset-gray-900 transition-colors duration-300">
-			{option.value}
-		</button>
-	{/each}
-</div>
+
+{#if render}
+	<div class="grid grid-rows-2 grid-cols-3 gap-4 sm:gap-8">
+		{#each options as option}
+			<button on:click={e => { submitAnswer(option.value) }} data-status={option.status} class="chip h-20 w-20 sm:w-24 sm:h-24 xl:h-32 xl:w-32 text-3xl sm:text-4xl xl:text-5xl dark:text-gray-300 font-semibold tracking-widest border dark:border-gray-700 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:ring-2 ring-indigo-600 dark:ring-indigo-400 ring-offset-[0.15rem] dark:ring-offset-gray-900 transition-colors duration-300">
+				{option.value}
+			</button>
+		{/each}
+	</div>
+{/if}
 
 <style>
 	[data-status="correct"] {
