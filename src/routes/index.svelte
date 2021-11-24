@@ -21,8 +21,8 @@
 	<section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-4">
 		<GameCard href="/stack" name="Stack" id="stack" icon="list">See the full stack in groups of 13.</GameCard>
 		<GameCard href="/flashcards" name="Flashcards" id="flashcards" icon="flashcards">Learn (or quiz yourself on) each card using flashcards.</GameCard>
-		<GameCard href="#!" name="Next Card" id="nextcard" icon="next">Go through the whole stack, in order.</GameCard>
-		<GameCard href="#!" name="Number to Card" id="numbertocard" icon="number">Given a number 1-52, name the corresponding card in that position.</GameCard>
-		<GameCard href="#!" name="Card to Number" id="cardtonumber" icon="heart">Given a card, name the position of that card in the stack.</GameCard>
+		<GameCard href="/next-card" name="Next Card" id="nextcard" icon="next">Go through the whole stack, in order.</GameCard>
+		<GameCard href="/number-to-card" name="Number to Card" id="numbertocard" icon="number">Given a number 1-52, name the corresponding card in that position.</GameCard>
+		<GameCard href="/card-to-number" name="Card to Number" id="cardtonumber" icon="heart">Given a card, name the position of that card in the stack.</GameCard>
 	</section>
 </div>

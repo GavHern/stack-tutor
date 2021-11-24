@@ -6,6 +6,8 @@
 
 	const stack = Object.values(mnemonica);
 
+	let showAdditional = false;
+
 	let count = 0;
 
 	const displayed_count = spring();
@@ -22,12 +24,12 @@
 	
 
 	<div class="w-full flex justify-center">
-		<div class="w-[30em] h-[20em] md:w-[40em] md:h-[25em] xl:w-[50em] xl:h-[35em] overflow-hidden text-center relative">
+		<div class="w-[30em] h-[20em] md:w-[40em] md:h-[25em] xl:w-[50em] xl:h-[30em] overflow-hidden text-center relative {showAdditional ? 'w-[15em] h-[10em] md:w-[20em] md:h-[12em] xl:w-[28em] xl:h-[17em]':''}">
 			<div aria-hidden="true" class="absolute -top-12 h-16 w-full bg-white dark:bg-gray-900 blur-md z-20"></div>
 			<div aria-hidden="true" class="absolute -bottom-12 h-16 w-full bg-white dark:bg-gray-900 blur-md z-20"></div>
 			<div class="counter-digits absolute h-full w-full" style="transform: translate(0, {-100 * offset}%)">
-				<Flashcard style="top: 100%" ariaHidden="true">{stack[Math.floor($displayed_count + 1)]}</Flashcard>
-				<Flashcard>{stack[Math.floor($displayed_count)]}</Flashcard>
+				<Flashcard style="top: 100%" showAdditional ariaHidden="true" card={stack[Math.floor($displayed_count + 1)]} />
+				<Flashcard showAdditional card={stack[Math.floor($displayed_count)]} />
 			</div>
 		</div>
 	</div>
@@ -54,4 +56,4 @@
 			</button>
 		</div>
 	</div>
-</section>
+</section>{offset}
