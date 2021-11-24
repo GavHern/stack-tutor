@@ -1,59 +1,28 @@
-<script context="module" lang="ts">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
+	import GameCard from '../lib/GameCard.svelte';
+	import { fade } from 'svelte/transition';
+
+	let selectedStack = 'mnemonica';
+	//$: localStorage.stack = selectedStack;
 </script>
 
-<svelte:head>
-	<title>Home</title>
-</svelte:head>
-
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
+<div in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration:300 }}>
+	<section>
+		<h1 class="text-3xl font-semibold tracking-wide text-center pb-2 pt-4 dark:text-white">Stack Tutor</h1>
+		<div class="flex justify-center py-2">
+			<select bind:value={selectedStack} class="bg-indigo-50 py-3 pl-4 pr-10 rounded-lg border-indigo-400 focus:ring-indigo-400 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100">
+				<option value="mnemonica">Mnemonica Stack</option>
+				<option value="aronson" disabled>Aronson Stack</option>
+				<option value="custom" disabled>Custom Stack (Coming Soon)</option>
+			</select>
 		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+	</section>
+	
+	<section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-4">
+		<GameCard href="/stack" name="Stack" id="stack" icon="list">See the full stack in groups of 13.</GameCard>
+		<GameCard href="/flashcards" name="Flashcards" id="flashcards" icon="flashcards">Learn (or quiz yourself on) each card using flashcards.</GameCard>
+		<GameCard href="#!" name="Next Card" id="nextcard" icon="next">Go through the whole stack, in order.</GameCard>
+		<GameCard href="#!" name="Number to Card" id="numbertocard" icon="number">Given a number 1-52, name the corresponding card in that position.</GameCard>
+		<GameCard href="#!" name="Card to Number" id="cardtonumber" icon="heart">Given a card, name the position of that card in the stack.</GameCard>
+	</section>
+</div>
