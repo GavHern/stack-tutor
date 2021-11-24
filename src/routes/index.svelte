@@ -1,10 +1,14 @@
 <script lang="ts">
-	import GameCard from '../lib/GameCard.svelte';
+	import GameCard from '$lib/GameCard.svelte';
 	import { fade } from 'svelte/transition';
 
 	let selectedStack = 'mnemonica';
 	//$: localStorage.stack = selectedStack;
 </script>
+
+<svelte:head>
+	<title>Stack Tutor - Home</title>
+</svelte:head>
 
 <div in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration:300 }}>
 	<section>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Flashcard from '../lib/Flashcard.svelte';
+	import Flashcard from '$lib/Flashcard.svelte';
 	import { fade } from 'svelte/transition';
 	import { spring } from 'svelte/motion';
 	import { mnemonica } from '../global';
@@ -19,6 +19,10 @@
 		return ((n % m) + m) % m;
 	}
 </script>
+
+<svelte:head>
+	<title>Stack Tutor - Flashcards</title>
+</svelte:head>
 
 <section in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration:300 }} style="height: calc(100vh - 4rem)" class="flex flex-col justify-center items-center">
 	

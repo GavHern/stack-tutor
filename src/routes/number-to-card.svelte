@@ -8,6 +8,10 @@
 	const hint = writable('Loading...')
 </script>
 
+<svelte:head>
+	<title>Stack Tutor - Number to Card</title>
+</svelte:head>
+
 <section in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration:300 }} style="height: calc(100vh - 4rem)" class="flex flex-col justify-center items-center space-y-16">
 	<div class="h-1/2 grid place-items-center">
 		<h1 class="text-8xl dark:text-white font-semibold tracking-widest">{$hint}</h1>

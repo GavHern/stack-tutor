@@ -10,6 +10,10 @@
 	const stackArray = Object.values(mnemonica);
 </script>
 
+<svelte:head>
+	<title>Stack Tutor - Stack</title>
+</svelte:head>
+
 <section in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration:300 }} class="grid grid-rows-2 grid-cols-2 lg:grid-rows-1 lg:grid-cols-4 gap-8 h-full px-4 sm:px-16 xl:px-0 pt-4 pb-16">
 	<ul class="text-center text-3xl md:text-4xl">
 		{#each stackArray.slice(0,13) as card, idx}
