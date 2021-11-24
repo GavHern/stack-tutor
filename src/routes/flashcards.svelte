@@ -37,8 +37,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	
 	<div class="w-full flex justify-center px-16 mt-8 lg:mt-0">
 		<div class="h-16 flex border-t border-b dark:border-gray-800">
@@ -60,4 +58,4 @@
 			</button>
 		</div>
 	</div>
-</section>{offset}
+</section>
