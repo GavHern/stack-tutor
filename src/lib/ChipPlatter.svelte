@@ -71,12 +71,12 @@
 
 <style>
 	[data-status="correct"] {
-		background-color: #34D399;
-		color: #000000;
+		background-color: #34D399 !important;
+		color: #000000 !important;
 	}
 
 	[data-status="incorrect"] {
-		background-color: #F87171;
-		color: #000000;
+		background-color: #F87171 !important;
+		color: #000000 !important;
 	}
 </style>
