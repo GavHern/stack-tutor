@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { mnemonica } from '../global';
+	import { mnemonica } from '$lib/defaultStacks.json';
 
 	export let type: "card" | "number";
 	export let hintStore: any;

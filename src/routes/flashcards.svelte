@@ -2,7 +2,7 @@
 	import Flashcard from '$lib/Flashcard.svelte';
 	import { fade } from 'svelte/transition';
 	import { spring } from 'svelte/motion';
-	import { mnemonica } from '../global';
+	import { mnemonica } from '$lib/defaultStacks.json';
 
 	const stack = Object.values(mnemonica);
 

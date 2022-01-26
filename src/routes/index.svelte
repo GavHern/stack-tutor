@@ -1,9 +1,16 @@
 <script lang="ts">
 	import GameCard from '$lib/GameCard.svelte';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { chosenStack } from '$lib/global';
 
-	let selectedStack = 'mnemonica';
-	//$: localStorage.stack = selectedStack;
+	let select;
+
+	onMount(() => { select.value = $chosenStack})
+
+	const updateSelect = () => {
+		chosenStack.set(select.value)
+	}
 </script>
 
 <svelte:head>
@@ -14,9 +21,9 @@
 	<section>
 		<h1 class="text-3xl font-semibold tracking-wide text-center pb-2 pt-4 dark:text-white">Stack Tutor</h1>
 		<div class="flex justify-center py-2">
-			<select bind:value={selectedStack} class="bg-indigo-50 py-3 pl-4 pr-10 rounded-lg border-indigo-400 focus:ring-indigo-400 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100">
+			<select on:change={updateSelect} bind:this={select} class="bg-indigo-50 py-3 pl-4 pr-10 rounded-lg border-indigo-400 focus:ring-indigo-400 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100">
 				<option value="mnemonica">Mnemonica Stack</option>
-				<option value="aronson" disabled>Aronson Stack</option>
+				<option value="aronson">Aronson Stack</option>
 				<option value="custom" disabled>Custom Stack (Coming Soon)</option>
 			</select>
 		</div>

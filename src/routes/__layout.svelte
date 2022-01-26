@@ -1,18 +1,14 @@
 <script lang="ts">
 	import "../app.css";
 
-	import { theme } from '../global';
+	import { theme, chosenStack } from '$lib/global';
 	import { page } from '$app/stores';
+	import { onMount } from "svelte";
 
-	let darkModeParent: Element;
+	$: dark = $theme ?? false;
 
-	// Default dark theme to local storage value. Fallback on device preference for first-timers
-	let dark = false //localStorage.dark
-	//$: window.localStorage.dark = dark; // Update local storage when state changes
-	
 	const darkToggle = () => {
-		dark = !dark;
-		//window.localStorage.dark = dark;
+		theme.set(!$theme);
 	}
 </script>
 

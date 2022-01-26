@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '../global';
+	import { page } from '$lib/global';
 
 	export let name: string;
 	export let href: string;

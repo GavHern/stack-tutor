@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { mnemonica, aronson } from '../global';
+	import { mnemonica, aronson } from '$lib/defaultStacks.json';
 	import { fade } from 'svelte/transition';
 
 	const stacks = {
