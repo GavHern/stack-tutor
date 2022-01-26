@@ -8,6 +8,7 @@
 	let render = true;
 
 	$: reset(max);
+	$: reset(type);
 
 	const reset = (_) => {
 		correctAnswer = chooseRandom()
