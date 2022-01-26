@@ -1,9 +1,17 @@
 <script lang="ts">
-	import { mnemonica } from '$lib/defaultStacks.json';
+	import defaultStacks from '$lib/defaultStacks.json';
+	import { chosenStack } from "$lib/global";
+	import { onMount } from 'svelte';
 
 	export let type: "card" | "number";
 	export let hintStore: any;
 	export let max: number;
+
+	let stack = defaultStacks.mnemonica;
+
+	onMount(() => {
+		stack = defaultStacks?.[$chosenStack];
+	})
 
 	let render = true;
 
@@ -20,7 +28,7 @@
 
 	const chooseRandom = () => {
 		const index = Math.floor(Math.random() * max) + 1;
-		const card = mnemonica[index];
+		const card = stack[index];
 
 		if(type === "card") {
 			hintStore.set(index);
@@ -34,7 +42,7 @@
 	let correctAnswer = chooseRandom();
 
 	const generateList = () => {
-		let deck = (type === "card") ? Object.values(mnemonica) : Object.keys(mnemonica).slice(0, max); // Get either all the cards in the stack or all the numbers (1-52 but flexible for shorter or longer stacks)
+		let deck = (type === "card") ? Object.values(stack) : Object.keys(stack).slice(0, max); // Get either all the cards in the stack or all the numbers (1-52 but flexible for shorter or longer stacks)
 		let filteredDeck = deck.filter(item => item != correctAnswer); // Remove the correct answer as a possibility
 		let shuffledDeck = filteredDeck.sort(() => 0.5 - Math.random()); // Shuffle the list
 		let selected = shuffledDeck.slice(0, 5); // Get the first 5 items of the shuffled list

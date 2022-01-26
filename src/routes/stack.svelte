@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { mnemonica, aronson } from '$lib/defaultStacks.json';
+	import defaultStacks from '$lib/defaultStacks.json';
+	import { chosenStack } from "$lib/global";
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	const stacks = {
-		'mnemonica': mnemonica,
-		'aronson': aronson
-	}
+	let stackArray = Object.values(defaultStacks.mnemonica);
 
-	const stackArray = Object.values(mnemonica);
+	onMount(() => {
+		stackArray = Object.values(defaultStacks?.[$chosenStack])
+	})
 </script>
 
 <svelte:head>

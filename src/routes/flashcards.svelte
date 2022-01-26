@@ -2,9 +2,15 @@
 	import Flashcard from '$lib/Flashcard.svelte';
 	import { fade } from 'svelte/transition';
 	import { spring } from 'svelte/motion';
-	import { mnemonica } from '$lib/defaultStacks.json';
+	import defaultStacks from '$lib/defaultStacks.json';
+	import { chosenStack } from "$lib/global";
+	import { onMount } from 'svelte';
 
-	const stack = Object.values(mnemonica);
+	let stack = Object.values(defaultStacks.mnemonica);
+
+	onMount(() => {
+		stack = Object.values(defaultStacks?.[$chosenStack])
+	})
 
 	let showAdditional = false;
 
