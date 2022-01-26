@@ -36,7 +36,7 @@
 		<GameCard href="/guess" name="Guess" id="guess" icon="guess">Guess either the card to a corrosponding number or the number to a corrosponding card.</GameCard>
 	</section>
 
-	<footer class="absolute p-4 inset-0 top-auto bg-gray-100 dark:bg-gray-800 text-center font-semibold dark:text-gray-300">
+	<footer class="fixed p-4 inset-0 top-auto bg-gray-100 dark:bg-gray-800 text-center font-semibold dark:text-gray-300">
 		Made by <a href="https://gavhern.com" class="text-indigo-500 dark:text-indigo-300 underline">Gav Hern</a> <span class="opacity-50 text-indigo-700 dark:text-indigo-300 px-2">|</span> <a href="https://github.com/GavHern/stack-tutor" class="text-indigo-500 dark:text-indigo-300 underline">Fork me on GitHub</a>!
 	</footer>
 </div>
