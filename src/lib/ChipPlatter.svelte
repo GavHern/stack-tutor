@@ -1,7 +1,9 @@
 <script lang="ts">
 	import defaultStacks from '$lib/defaultStacks.json';
 	import { chosenStack } from "$lib/global";
-	import { onMount } from 'svelte';
+	import { onMount, createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
 
 	export let type: "card" | "number";
 	export let hintStore: any;
@@ -29,6 +31,8 @@
 	const chooseRandom = () => {
 		const index = Math.floor(Math.random() * max) + 1;
 		const card = stack[index];
+
+		dispatch('updated');
 
 		if(type === "card") {
 			hintStore.set(index);

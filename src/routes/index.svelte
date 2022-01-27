@@ -34,6 +34,7 @@
 		<GameCard href="/flashcards" name="Flashcards" id="flashcards" icon="flashcards">Learn (or quiz yourself on) each card using flashcards.</GameCard>
 		<GameCard href="/next-card" name="Next Card" id="nextcard" icon="next">Go through the whole stack, in order.</GameCard>
 		<GameCard href="/quiz" name="Quiz" id="quiz" icon="quiz">Guess either the card to a corrosponding number or the number to a corrosponding card.</GameCard>
+		<GameCard href="/listen" name="Listen" id="listen" icon="listen">A version of "Quiz" where you hear a named card or number rather than seeing it.</GameCard>
 	</section>
 
 	<footer class="fixed p-4 inset-0 top-auto bg-gray-100 dark:bg-gray-800 text-center font-semibold dark:text-gray-300">
