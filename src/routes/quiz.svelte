@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Stack Tutor - Number to Card</title>
+	<title>Stack Tutor - Quiz</title>
 </svelte:head>
 
 <section in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration:300 }} style="height: calc(100vh - 4rem)" class="flex flex-col justify-center items-center space-y-16">
