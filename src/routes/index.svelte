@@ -29,7 +29,7 @@
 		</div>
 	</section>
 	
-	<section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-4">
+	<section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 pb-20 gap-4">
 		<GameCard href="/stack" name="Stack" id="stack" icon="list">See the full stack in groups of 13.</GameCard>
 		<GameCard href="/flashcards" name="Flashcards" id="flashcards" icon="flashcards">Learn (or quiz yourself on) each card using flashcards.</GameCard>
 		<GameCard href="/next-card" name="Next Card" id="nextcard" icon="next">Go through the whole stack, in order.</GameCard>
