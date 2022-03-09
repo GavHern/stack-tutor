@@ -1,6 +1,6 @@
 # Stack Tutor
 
-Stack Tutor is a web app built using [SvelteKit](https://github.com/sveltejs/kit) and [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) that helps magicians learn decks stack such as [mnemonica](https://www.conjuringarchive.com/list/book/2498) or [aronson](https://www.conjuringarchive.com/list/book/1634).
+Stack Tutor is a web app built using [SvelteKit](https://github.com/sveltejs/kit) and [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) that helps magicians learn deck stacks such as [mnemonica](https://www.conjuringarchive.com/list/book/2498) or [aronson](https://www.conjuringarchive.com/list/book/1634).
 
 This app is currently hosted at: **[https://stacktutor.gavhern.com](https://stacktutor.gavhern.com)**
 
