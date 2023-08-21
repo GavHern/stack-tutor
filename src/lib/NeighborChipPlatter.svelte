@@ -5,7 +5,6 @@
 
   const dispatch = createEventDispatcher();
 
-  export let type: "card" | "number";
   export let hintStore: any;
   export let max: number;
 
@@ -18,7 +17,6 @@
   let render = true;
 
   $: reset(max);
-  $: reset(type);
 
   const reset = (_) => {
     correctAnswer = chooseRandom();
@@ -34,20 +32,24 @@
 
     dispatch("updated");
 
-    if (type === "card") {
-      hintStore.set(index);
-      return card;
-    } else {
-      hintStore.set(card);
-      return index;
-    }
+    hintStore.set({
+      cards: [
+        stack?.[index - 2],
+        stack?.[index - 1],
+        stack[index],
+        stack?.[index + 1],
+        stack?.[index + 2],
+      ],
+      position: 1,
+    });
+
+    return card;
   };
 
   let correctAnswer = chooseRandom();
 
   const generateList = () => {
-    let deck =
-      type === "card" ? Object.values(stack) : Object.keys(stack).slice(0, max); // Get either all the cards in the stack or all the numbers (1-52 but flexible for shorter or longer stacks)
+    let deck = Object.values(stack); // Get either all the cards in the stack
     let filteredDeck = deck.filter((item) => item != correctAnswer); // Remove the correct answer as a possibility
     let shuffledDeck = filteredDeck.sort(() => 0.5 - Math.random()); // Shuffle the list
     let selected = shuffledDeck.slice(0, 5); // Get the first 5 items of the shuffled list
