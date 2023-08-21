@@ -20,7 +20,7 @@
 >
   <div class="h-1/2 grid place-items-center">
     <div
-      class="flex space-x-12 items-center dark:text-white font-semibold tracking-widest"
+      class="scale-[0.6] sm:scale-[0.8] md:scale-100 flex space-x-12 items-center dark:text-white font-semibold tracking-widest"
     >
       <div class="text-4xl opacity-50">{$hint?.cards?.[0] ?? ""}</div>
       <div class="text-6xl opacity-75">{$hint?.cards?.[1] ?? ""}</div>
